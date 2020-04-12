@@ -1,6 +1,5 @@
-# CSCI571-Spring-2019
+# CSCI571-Web-Tech-Spring-2019
 This repo contains all the projects done as a part of CSCI 567 Web Technology during Spring 2019
-# USC_CSCI_571_Web_Technologies
 Homework Assignments for Master's Course CSCI 571 Web Technologies
 
 
