@@ -1,0 +1,165 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Film List</title>
+	<style type="text/css">
+		.form-1{
+			text-align: center;
+			margin-left: auto;
+			margin-right: auto; 
+			margin-top: 200px;
+		}
+	#input1-field {
+	  border: 2px solid #DDDDDD;
+	  outline: none;
+	  margin: 5px 1px 3px 0px;
+	  padding: 3px 0px 3px 3px;
+	}
+ 
+	#input1-field:focus {
+	  box-shadow: 0 0 4px rgba(79, 202, 240, 1);
+	  border: 2px solid rgba(79, 202, 240, 1);
+	  margin: 5px 1px 3px 0px;
+	  padding: 3px 0px 3px 3px;
+	}
+	</style>
+
+		<script type="text/javascript">
+
+function imgError(image){
+	console.log("Hello");
+	image.onerror = "";
+	image.src = "";
+	return true;
+}
+function generateHTML(jsonObj){
+		root=jsonObj.DocumentElement;
+		
+		html_text="<html><head><title>Highest-grossing films</title></head><body>";
+		html_text+="<table border='2'>"; 
+
+		var films=jsonObj.Mainline.Table.Header.Data; // an array of planes
+		var filmsHeader = Object.keys(films);
+		for( var i in filmsHeader){
+		    	header_print = films[i];
+		    	html_text+="<th>"+header_print+"</th>"
+		}
+		html_text+="<tbody>"; 
+		html_text+="<tr>"; 
+		x=120;  y=160;
+		var filmsList=jsonObj.Mainline.Table.Row;
+
+		for(var i=0; i<filmsList.length; i++){
+			var filmsData = filmsList[i];
+			html_text+="<tr>";
+			var filmsData_keys = Object.keys(filmsData);
+			for(var j=0; j<filmsData_keys.length; j++){
+				var prop = filmsData_keys[j];
+				if (prop=="Logo"){
+					if (filmsData[prop]==""){
+						html_text+="<td></td>";
+					}
+					else{
+						html_text+="<td><img src="+ filmsData[prop] +" width='"+x+"' height='"+y+"' onerror='this.style.display=\"none\"'></td>";
+					}
+				}
+				else if(prop=="Hubs"){
+					var info = filmsData[prop];
+					var hubs_key = Object.keys(info);
+					html_text+="<td><ul>"
+					for(var k=0; k<hubs_key.length;k++){
+						if (hubs_key[k]=="Hub"){
+							for (var ind in info[hubs_key[k]]){
+								if (k===0 && ind ==="0"){
+									html_text+="<li><b>"+info[hubs_key[k]][ind]+"</b></li>";
+								}else{
+									html_text+="<li>"+info[hubs_key[k]][ind]+"</li>"
+								}
+							}
+						}
+					}
+				html_text+="</ul></td>"
+				}
+				else if(prop == "HomePage"){
+					html_text+="<td style = 'white-space: nowrap'><a href='"+ filmsData[prop]+ "'/>"+filmsData[prop] +"</td>";
+				}
+				else{
+					html_text+="<td>"+ filmsData[prop] +"</td>";
+				}
+			}
+			html_text+="</tr>"
+		}
+                            
+		html_text+="</tbody>"; 
+		html_text+="</table>";           
+		html_text+="</body></html>";  
+	}
+
+	function viewJSON(what){
+		var URL = what.URL.value;
+		 
+		function loadJSON(url) {
+			if (window.XMLHttpRequest)
+			{// code for IE7+, Firefox, Chrome, Opera, Safari
+			xmlhttp=new XMLHttpRequest();
+			} 
+			else {// code for IE6, IE5
+			xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+			}
+
+			xmlhttp.open("GET",url,false); // "synchronous
+			xmlhttp.onreadystatechange = function(){
+				if(xmlhttp.readyState == 4){
+					if(xmlhttp.status=="200"){
+						jsonObj= JSON.parse(xmlhttp.responseText);
+					}
+					else{
+						window.alert("JSON file not found!");
+						return
+					}
+				}
+			};	
+			
+			xmlhttp.send();
+			return jsonObj;
+		}
+		jsonObj = loadJSON(URL);
+		if (jsonObj.Mainline.Table.Row==undefined ||jsonObj.Mainline.Table.Row==""){
+			window.alert("Json File does not contain Table Data");
+		}
+		else{
+			if (window.ActiveXObject) 
+			{  
+					if (jsonObj.parseError.errorCode != 0) {
+					var myErr = jsonObj.parseError;
+					generateError(jsonObj);
+					hWin = window.open("", "Error", "height=300,width=340");
+					hWin.document.write(html_text);
+				} else {  
+					generateHTML(jsonObj);
+					hWin = window.open("", "Assignment4", "height=700,width=1200");
+					hWin.document.write(html_text);   } 
+			} 
+			else {  
+				jsonObj.onload=generateHTML(jsonObj);
+				hWin = window.open("", "Assignment4", "height=700,width=1200");
+				hWin.document.write(html_text);  
+			} 
+			hWin.document.close();
+		}  
+	}	
+	</script>
+
+</head>
+<body>
+	<div class = "form-1">
+	<h3>Enter URL for Highest-grossing films List JSON File</h3>
+	 <form name="myForm" method="GET">
+	  <input id = "input1-field" type="text" name="URL" required><br><br>
+	  <button onClick = "viewJSON(this.form)">Submit Query</button>
+	</form> 
+	</div>
+	
+</body>
+</html>

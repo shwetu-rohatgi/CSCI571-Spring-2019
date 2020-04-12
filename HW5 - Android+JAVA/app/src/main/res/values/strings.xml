@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?><!-- Copyright (C) 2016 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <string name="app_name">ProductSearch</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tab_label1">Search</string>
+    <string name="tab_label2">Wishlist</string>
+    <string name="error_msg">Please enter a valid text</string>
+    <string name="title_activity_product_details">productDetails</string>
+    <string name="productPage">Product</string>
+    <string name="similarPage">Similar</string>
+    <string name="photosPage">Photos</string>
+    <string name="shippingPage">Shipping</string>
+    <string name="facebook_app_id">602749993522223</string>
+    <string-array name="CategoryArray">
+        <item>All</item>
+        <item>Art</item>
+        <item>Baby</item>
+        <item>Books</item>
+        <item>Clothing,Shoes and Accessories</item>
+        <item>Computer, Tablets and Network</item>
+        <item>Health and Beauty</item>
+        <item>Music</item>
+        <item>Video, Games and Consoles</item>
+    </string-array>
+
+</resources>

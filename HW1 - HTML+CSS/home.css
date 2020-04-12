@@ -1,0 +1,262 @@
+@font-face{
+	font-family: shwetu;
+	src: url('futura-pt-heavy.otf');
+}
+
+@font-face{
+	font-family: minni;
+	src: url('futura-pt-medium.otf');
+}
+
+body, html{
+  height: 100%;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  overflow: auto;
+}
+
+#container{
+	position: relative;
+	top: 0;
+	margin-left: auto;
+	margin-right: auto;
+	width: 640px;
+	background: transparent;
+	background-repeat: no-repeat;
+	overflow: hidden;	
+}
+
+
+* {
+  box-sizing: border-box;
+}
+ul{
+	margin-left: 18px;
+	margin-right: 28px; 
+	margin-top: 15px;
+	padding: 0px;
+	list-style-type: none;
+	text-align: right;
+}
+
+li{
+	display: inline-block;
+	color: white;
+}
+
+.arrow{
+	position: absolute;
+	margin-top: 40px;
+	color: white;
+	height: 50px;
+	width: 90px;
+	margin-left: 314px;
+	margin-right: 250px;
+	z-index: 5;
+}
+
+.parallax {
+  position: relative;
+  width: 640px;
+  height: 457px;
+  background: linear-gradient(rgb(100,100,100,0.12), rgb(100,100,100,0.12)), url("http://csci571.com/hw/hw3/images/snow1.jpg");
+  opacity: .9;
+  background-attachment: fixed;
+  background-position: center top;
+  background-repeat: no-repeat;
+  z-index: -3;
+  overflow: hidden;
+}
+
+.head-left{
+	float: left;
+	margin-left: 30px; 
+	font-size: 18px;
+	color: white;
+	letter-spacing: 1.5px;
+	font-family: "shwetu";
+}
+.head-right{
+	float: right;
+	margin-right: 0px;
+	font-size: 7px;
+	color: white;
+	text-decoration: none;
+	display: inline-block;
+	font-family: "shwetu";
+	letter-spacing: 1px;
+	padding-top: 8px;
+}
+.pd-10{
+	margin-right: 22px;
+}
+.center-head{
+	font-size: 50px;
+	font-weight: bolder;
+	color: white;
+	text-align: center;
+	padding-top: 82px;
+	font-family: "shwetu";
+	margin-bottom: -45px; 
+}
+
+.center-head-2{
+	font-size: 50px;
+	font-weight: bolder;
+	color: white;
+	text-align: center;
+	padding-top: px;
+	font-family: "shwetu";
+	margin-bottom: 18px;
+}
+.section-1-para{
+	color: white;
+	float: center;
+	margin-left: 175px;
+	margin-right: 175px;
+	padding-top: 0px;
+	text-align: center;
+	font-size: 9px;
+	font-family: "Merriweather Sans";
+	letter-spacing: .5px;
+	line-height: 16px;
+	z-index: 5;
+}
+.button {
+  border: none;
+  padding: 11px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 7px;
+  font-weight: bold;
+  font-family: "minni";
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  display: block;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+
+.button4 {
+	background-color: #ffffff; 
+	color: black;
+}
+
+.section-2{
+	position: relative;
+	width: 640px;
+	height: 710px;
+  	padding: 0;
+  	border: 0;
+  	outline: 0;
+  	font-size: 100%;
+  	vertical-align: baseline;
+  	background-color: white;
+  	z-index: 2;
+}
+
+.wrapper{
+	margin-top: 65px;
+	margin-bottom: 65px;
+	margin-left: 65px;
+	margin-right: 65px;
+}
+
+.image-wrapper {
+  box-sizing:border-box;
+  float: left;
+  margin-bottom:5px;
+  width: 50%;
+}
+
+.image-wrapper:nth-child(even)
+{
+  padding-left:5px;
+  max-width: 300px;
+}
+
+.image-wrapper:nth-child(odd)
+{
+  padding-right:5px;
+  max-width: 300px;
+}
+
+.image-wrapper > img {
+  object-fit: cover;
+  width: 250px;
+  height: 250px;
+}
+
+/*.image-wrapper .img1 {
+  background-image: url("http://csci571.com/hw/hw3/images/snow2.jpg");
+	padding-left: -20px;
+	height: 260px;
+	width: 300px;
+}*/
+
+.section-2-para{
+	position: absolute;
+	color: grey;
+	margin-left: 170px;
+	margin-right: 170px;
+	margin-top: 550px;
+	text-align: left;
+	font-size: 8px;
+	font-family: 'Roboto', san-serif;
+	line-height: 17px;
+}
+
+.section-3{
+	  margin: 0;
+	  padding: 0;
+	  border: 0;
+	  outline: 0;
+	  font-size: 100%;
+  	width: 640px;
+  	height: 457px;
+	  vertical-align: baseline;
+	  background: transparent;
+	  overflow: hidden;
+	  position: relative;
+	z-index: 1;
+
+	margin-bottom: 70px;
+}
+
+.parallax2 {
+  /* The image used */
+  	position: relative;
+  	background-image: linear-gradient(rgb(100,100,100,0.2), rgb(100,100,100,0.2)), url("http://csci571.com/hw/hw3/images/snow6.jpg");
+  	opacity: 1;
+	width: 640px;
+	min-width: 743px;
+	max-width: 640px;
+	height: 470px;
+	margin-bottom: 50px;
+  	background-attachment: fixed;
+  	background-repeat: no-repeat;
+  	background-position: center;  
+  	background-size: cover;
+  /*background-size: 715px 500px;*/
+}
+
+.section-3-para{
+	position: absolute;
+	color: white;
+	top: 210px; 
+	margin-left: 150px;
+	margin-right: 150px;
+	text-align: center;
+	font-size: 10px;
+	font-family: "Roboto";
+	letter-spacing: 1px;
+	line-height: 16px;
+}
